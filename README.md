@@ -1,39 +1,59 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# 🗺️ map_adapter_sdk
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A Flutter SDK that provides a unified abstraction layer for multiple map providers such as Google Maps and Mapbox using an adapter-based architecture.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+## 🚀 Overview
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+`map_adapter_sdk` is designed to decouple your application from specific map providers by introducing a clean and scalable architecture. It allows you to switch between map engines without modifying your business logic or UI.
 
-## Features
+## ✨ Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+* 🔄 Multi-provider support (Google Maps, Mapbox)
+* 🧩 Adapter-based architecture
+* 📍 Unified domain models (`MapLatLng`, `MapMarker`, `MapPolyline`, etc.)
+* ⚡ Seamless provider switching
+* 🧪 Easy to test and mock
+* 🧱 Clean and maintainable architecture
+* 🔌 Ready for future integrations (Huawei Maps, OpenStreetMap)
 
-## Getting started
+## 🏗️ Architecture
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+The SDK is organized into:
 
-## Usage
+* **Models**: Platform-independent map entities
+* **Adapters**: Provider-specific implementations
+* **Controllers**: Unified API for map operations
+* **Mappers**: Conversion between domain models and SDK types
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## 🎯 Use Cases
+
+* Applications that need to support multiple map providers
+* Projects requiring flexibility and scalability
+* Apps targeting different ecosystems (Google / Huawei)
+* Teams avoiding vendor lock-in
+
+## 📦 Example
 
 ```dart
-const like = 'sample';
+final controller = PlatformMapController.init(...);
+
+await controller.animateCameraLatLngZoom(
+  MapLatLng(latitude: -2.17, longitude: -79.92),
+  16,
+);
 ```
 
-## Additional information
+## 🔮 Roadmap
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+* 🔹 Clustering support
+* 🔹 Route drawing and navigation
+* 🔹 Offline map support
+* 🔹 AI-driven map interactions
+
+## 🤝 Contributions
+
+Contributions, issues, and feature requests are welcome.
+
+## 📄 License
+
+MIT License
